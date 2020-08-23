@@ -3,12 +3,16 @@ import { Typography, makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    backgroundColor: "black",
+    backgroundColor: "#464866",
     color: "white",
-    height: "15%",
+    height: "100px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+
+  text: {
+    fontFamily: "Optima",
   },
 }))
 
@@ -18,7 +22,9 @@ const Footer = () => {
   return (
     <div id="footer" className={classes.footer}>
       <footer>
-        <Typography>Erick Canals © {new Date().getFullYear()}</Typography>
+        <Typography className={classes.text}>
+          © Erick Canals {new Date().getFullYear()}
+        </Typography>
       </footer>
     </div>
   )

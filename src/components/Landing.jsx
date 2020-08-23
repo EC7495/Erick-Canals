@@ -1,20 +1,24 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Typography, Button, makeStyles } from "@material-ui/core"
+import { Typography, Button, Fade, makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   text: {
-    fontSize: "100%",
+    fontSize: "150%",
+    fontFamily: "Optima",
+    color: "white",
+  },
+
+  buttonText: {
+    fontFamily: "Optima",
+    color: "#2E9CCA",
   },
 
   button: {
-    color: "white",
-    backgroundColor: "blue",
+    backgroundColor: "#25274D",
     "&:hover": {
-      color: "black",
-      backgroundColor: "red",
+      backgroundColor: "#464866",
     },
-
     margin: "1%",
   },
 
@@ -23,46 +27,47 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#25274D",
   },
 
   link: {
     textDecoration: "none",
-    color: "inherit",
+    color: "white",
+    textDecoration: "none",
   },
 }))
 
 const Landing = () => {
   const currentTime = new Date().getHours()
   const classes = useStyles()
-  let timeOfDay
-
-  if (currentTime >= 5 && currentTime <= 11) timeOfDay = "morning"
-  else if (currentTime >= 12 && currentTime <= 16) timeOfDay = "afternoon"
-  else timeOfDay = "evening"
+  const timeOfDay =
+    currentTime >= 5 && currentTime <= 11
+      ? "morning"
+      : currentTime >= 12 && currentTime <= 16
+      ? "afternoon"
+      : "evening"
 
   return (
     <div id="landing" className={classes.landing}>
-      <Typography
-        align="center"
-        variant="h1"
-        className={classes.text}
-        gutterBottom
-      >
-        Good {timeOfDay}! Welcome to my portfolio
-      </Typography>
-      <Typography
-        align="center"
-        variant="h2"
-        className={classes.text}
-        gutterBottom
-      >
-        My name is Erick Canals
-      </Typography>
-      <Button variant="outlined" className={classes.button}>
-        <Link to="/projects" className={classes.link}>
-          <Typography variant="button">See my projects</Typography>
-        </Link>
-      </Button>
+      <Fade in timeout={{ appear: 2000, enter: 1500, exit: 500 }}>
+        <Typography
+          align="center"
+          variant="h1"
+          className={classes.text}
+          gutterBottom
+        >
+          Good {timeOfDay}! Welcome to my portfolio
+        </Typography>
+      </Fade>
+      <Fade in timeout={{ appear: 500, enter: 3000, exit: 500 }}>
+        <Button variant="outlined" className={classes.button}>
+          <Link to="/projects" className={classes.link}>
+            <Typography variant="button" className={classes.buttonText}>
+              See my projects
+            </Typography>
+          </Link>
+        </Button>
+      </Fade>
     </div>
   )
 }

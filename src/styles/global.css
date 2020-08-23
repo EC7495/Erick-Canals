@@ -1,4 +1,16 @@
-#___gatsby, #gatsby-focus-wrapper, html, body{
+* {
+  font-family: "Optima";
+}
+
+#___gatsby,
+#gatsby-focus-wrapper,
+#landing,
+html,
+body {
   margin: 0;
-  height: 100%
+  height: 100%;
+}
+
+.projects:hover {
+  text-decoration: underline;
 }
