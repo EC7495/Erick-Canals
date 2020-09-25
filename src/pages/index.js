@@ -4,13 +4,9 @@ import { Landing, Header, Footer } from "../components"
 
 const useStyles = makeStyles(theme => ({
   index: {
-    height: "100%",
-  },
-
-  image: {
-    borderRadius: "50%",
-    height: "25%",
-    display: "block",
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
   },
 }))
 
@@ -20,7 +16,6 @@ const IndexPage = () => {
   return (
     <div id="index-page" className={classes.index}>
       <Header />
-      {/* <img src="/ec.jpg" className={classes.image} /> */}
       <Landing />
       <Footer />
     </div>

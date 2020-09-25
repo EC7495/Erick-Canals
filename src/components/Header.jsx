@@ -62,18 +62,26 @@ const Header = () => {
       <Drawer anchor="left" open={drawerOpen} onClick={closeDrawer}>
         <div className={classes.list}>
           <List>
-            {["home", "projects", "photography", "resume"].map((link, idx) => (
-              <ListItem key={idx}>
-                <Link
-                  to={`/${link === "home" ? "" : link}`}
-                  className={classes.link}
-                >
-                  <Typography variant="button" className={classes.linkText}>
-                    {link}
-                  </Typography>
-                </Link>
-              </ListItem>
-            ))}
+            {["home", "about me", "projects", "photography"].map(
+              (link, idx) => (
+                <ListItem key={idx}>
+                  <Link
+                    to={`/${
+                      link === "home"
+                        ? ""
+                        : link === "about me"
+                        ? "about-me"
+                        : link
+                    }`}
+                    className={classes.link}
+                  >
+                    <Typography variant="button" className={classes.linkText}>
+                      {link}
+                    </Typography>
+                  </Link>
+                </ListItem>
+              )
+            )}
           </List>
         </div>
       </Drawer>

@@ -15,9 +15,13 @@ const useStyles = makeStyles(theme => ({
   },
 
   button: {
+    transition: "all .3s ease-in-out",
     backgroundColor: "#25274D",
     "&:hover": {
       backgroundColor: "#464866",
+      transform: "scale(1.03)",
+      boxShadow:
+        "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14), 0px 1px 14px 0px rgba(0,0,0,0.12)",
     },
     margin: "1%",
   },

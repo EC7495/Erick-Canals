@@ -1,9 +1,10 @@
 import React from "react"
+import { Typography } from "@material-ui/core"
 
 const NotFoundPage = () => {
   return (
     <div id="404">
-      <h1>Sorry, that page does not exist</h1>
+      <Typography align="center">Sorry, that page does not exist</Typography>
     </div>
   )
 }
